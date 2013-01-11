@@ -12,6 +12,7 @@ package com.custardsquare
 	import com.custardsquare.custardcube.render2D.Scene;
 	import com.custardsquare.custardcube.render3D.CompositeModel;
 	import com.custardsquare.custardcube.render3D.Custard3DStage;
+	import com.custardsquare.custardcube.render3D.ModelAsset;
 	import com.custardsquare.custardcube.render3D.ModelAssetLibrary;
 	import com.custardsquare.utils.asset.AssetID;
 	import com.custardsquare.utils.asset.AssetLoader;
@@ -20,9 +21,12 @@ package com.custardsquare
 	import flash.display.StageScaleMode;
 	import flash.events.Event;
 	import flash.filesystem.File;
+	import flash.filesystem.FileMode;
+	import flash.filesystem.FileStream;
 	import flash.filesystem.StorageVolume;
 	import flash.geom.Rectangle;
 	import flash.ui.Keyboard;
+	import flash.utils.ByteArray;
 	import starling.core.Starling;
 	import starling.display.Image;
 	import starling.text.TextField;
@@ -138,16 +142,31 @@ package com.custardsquare
 			//_model.root.scale(0.05);
 		
 			_file = new File();
-			_file.browseForDirectory("Test");
+			//_file.browseForDirectory("Pick Folder");
+			_file.browseForOpen("Pick Folder");
 			
 			_file.addEventListener(Event.SELECT, onDirectoryChoosen);
 		}
 		
 		private function onDirectoryChoosen(e:Event):void 
 		{
+			while (_file.extension != null)
+			{
+				_file = _file.parent;
+			}
 			DefaultDirectories.assets = _file.nativePath + "/";
 			
-			ModelAssetLibrary.library.addFolderAsset(_file);
+			var files:Array = _file.getDirectoryListing();
+			var validFiles:Vector.<String> = new Vector.<String>();
+			for (var i:uint = 0 ; i < files.length; ++i)
+			{
+				if ((files[i] as File).extension == "dae")
+				{
+					validFiles.push( (files[i] as File).name );
+				}
+			}
+			
+			ModelAssetLibrary.library.addFolderAsset(validFiles);
 			ModelAssetLibrary.library.loadAssets();
 			
 			ModelAssetLibrary.library.addEventListener(ModelAssetLibrary.MODEL_ASSETS_LOADED, onAssetsLoaded);
@@ -159,7 +178,50 @@ package com.custardsquare
 			var path:String = "";
 			var parts:Array = [];
 			
-	
+			var modelBase:ModelAsset = ModelAssetLibrary.library.getModelBase( assetsIDs[0] );
+			
+			if (modelBase)
+			{
+				CSLogger.log.info("\nWriting File");
+				
+				var byteArray:ByteArray = modelBase.toByteArray();
+				
+				/*
+				var byteArray:ByteArray = new ByteArray();
+				byteArray.writeObject(modelBase);
+				*/
+				
+				CSLogger.log.info("Size bytes: " + byteArray.length);
+				/*
+				byteArray.deflate();
+				CSLogger.log.info("Size bytes: " + byteArray.length);
+				byteArray.inflate();
+				CSLogger.log.info("Size bytes: " + byteArray.length);
+				*/
+				CSLogger.log.info("\n");
+				
+				var outFileName:String = DefaultDirectories.assets + "output/" + assetsIDs[0] + ".ccm";
+				var outFile:File = new File(outFileName);
+				var fileStream:FileStream = new FileStream();
+				
+				fileStream.addEventListener(Event.CLOSE, fileWritten);
+				
+				fileStream.openAsync(outFile, FileMode.WRITE);   
+
+				// write the bytearray to it
+				fileStream.writeBytes(byteArray);
+
+				// close the file
+				fileStream.close();
+			}
+			/*
+			byteArray.position = 0;
+			var newModelBase:ModelAsset = byteArray. as ModelAsset;
+			newModelBase.fileID = "TEST";
+			
+			ModelAssetLibrary.library.addModelBase(newModelBase);
+			*/
+			//parts.push( "TEST" );
 			parts.push( assetsIDs[0] );
 
 			
@@ -185,6 +247,14 @@ package com.custardsquare
 			starling.stage.addChild(scene);
 			
 			scene.addChild(image);
+			
+			
+			
+		}
+		
+		private function fileWritten(e:Event):void 
+		{
+			CSLogger.log.info("Finished writing file");
 		}
 		
 		private function initAway3D():void
