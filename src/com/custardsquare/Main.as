@@ -186,18 +186,8 @@ package com.custardsquare
 				
 				var byteArray:ByteArray = modelBase.toByteArray();
 				
-				/*
-				var byteArray:ByteArray = new ByteArray();
-				byteArray.writeObject(modelBase);
-				*/
-				
+				//byteArray.compress();
 				CSLogger.log.info("Size bytes: " + byteArray.length);
-				/*
-				byteArray.deflate();
-				CSLogger.log.info("Size bytes: " + byteArray.length);
-				byteArray.inflate();
-				CSLogger.log.info("Size bytes: " + byteArray.length);
-				*/
 				CSLogger.log.info("\n");
 				
 				var outFileName:String = DefaultDirectories.assets + "output/" + assetsIDs[0] + ".ccm";
@@ -213,6 +203,10 @@ package com.custardsquare
 
 				// close the file
 				fileStream.close();
+				
+				byteArray.position = 0;
+				
+				var newModel:ModelAsset = ModelAsset.fromBinary(byteArray);
 			}
 			/*
 			byteArray.position = 0;
