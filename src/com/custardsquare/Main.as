@@ -3,6 +3,8 @@ package com.custardsquare
 	import away3d.core.managers.Stage3DManager;
 	import away3d.core.managers.Stage3DProxy;
 	import away3d.events.Stage3DEvent;
+	import away3d.tools.serialize.Serialize;
+	import away3d.tools.serialize.TraceSerializer;
 	import com.custardsquare.battlesystem.KeyHandler;
 	import com.custardsquare.core.CustardSquareStage;
 	import com.custardsquare.core.DefaultDirectories;
@@ -179,18 +181,44 @@ package com.custardsquare
 			var parts:Array = [];
 			
 			var modelBase:ModelAsset = ModelAssetLibrary.library.getModelBase( assetsIDs[0] );
-			
 			if (modelBase)
 			{
+				
+				
+				var outFileName:String = DefaultDirectories.assets.replace("export", "avatar") + assetsIDs[0] + ".ccm";
+				var outXmlFileName:String = DefaultDirectories.assets.replace("export", "avatar");// + assetsIDs[0] + ".xml";
+				
+				outXmlFileName = outXmlFileName.replace(outXmlFileName.substr(outXmlFileName.indexOf("avatar")), "avatar/parts");
+				if (outFileName.indexOf("unisex") > 0)
+				{
+					outXmlFileName += "/unisex/";
+				}
+				else if (outFileName.indexOf("loading") > 0)
+				{
+					outXmlFileName += "/loading/";
+				}
+				else if (outFileName.indexOf("female") > 0)
+				{
+					outXmlFileName += "/female/";
+				}
+				else if (outFileName.indexOf("male") > 0)
+				{
+					outXmlFileName += "/male/";	
+				}
+				outXmlFileName += assetsIDs[0] + ".xml";
+				
+				modelBase.fileID = outXmlFileName.substring(outXmlFileName.indexOf("avatar"));
+				modelBase.fileID = modelBase.fileID.replace(".xml", "");
+				var newID:String = modelBase.fileID + "-new";
+				
 				CSLogger.log.info("\nWriting File");
 				
 				var byteArray:ByteArray = modelBase.toByteArray();
 				
-				//byteArray.compress();
+				byteArray.compress();
 				CSLogger.log.info("Size bytes: " + byteArray.length);
 				CSLogger.log.info("\n");
 				
-				var outFileName:String = DefaultDirectories.assets + "output/" + assetsIDs[0] + ".ccm";
 				var outFile:File = new File(outFileName);
 				var fileStream:FileStream = new FileStream();
 				
@@ -204,9 +232,53 @@ package com.custardsquare
 				// close the file
 				fileStream.close();
 				
-				byteArray.position = 0;
+				var xmlID:String = "<ID>" + outXmlFileName.substring(outXmlFileName.indexOf("avatar"));
+				xmlID = xmlID.replace(".xml", "</ID>");
 				
+				var targetFile:String = modelBase.fileID;
+				while (targetFile.indexOf("/") > 0)
+				{
+					targetFile = targetFile.substr(targetFile.indexOf("/") + 1);
+				}
+				
+				var xmlTargetFile:String = "<File>" + srcDir() + targetFile + ".ccm</File>";
+				
+				while (outXmlFileName.indexOf("\\") > 0)
+				{
+					outXmlFileName = outXmlFileName.replace("\\", "/");
+				}
+				
+				var document:XML = new XML("<Model/>");
+				document.appendChild(new XML(xmlID));
+				document.appendChild(new XML("<FrameRate>24</FrameRate>"));
+				document.appendChild(new XML("<Type>CCM</Type>"));
+				document.appendChild(new XML(xmlTargetFile));
+				
+				
+				
+				var xmlFile:File =  new File(outXmlFileName);
+				
+				var xmlByteArray:ByteArray = new ByteArray();
+				xmlByteArray.writeUTFBytes(document);
+				
+				var fileXmlStream:FileStream = new FileStream();
+				
+				fileXmlStream.addEventListener(Event.CLOSE, fileWritten);
+				
+				fileXmlStream.openAsync(xmlFile, FileMode.WRITE);   
+
+				// write the bytearray to it
+				fileXmlStream.writeBytes(xmlByteArray);
+
+				// close the file
+				fileXmlStream.close();
+				
+				
+				byteArray.position = 0;
+				byteArray.uncompress();
 				var newModel:ModelAsset = ModelAsset.fromBinary(byteArray);
+				newModel.fileID = newID;
+				ModelAssetLibrary.library.addModelBase(newModel);
 			}
 			/*
 			byteArray.position = 0;
@@ -215,8 +287,17 @@ package com.custardsquare
 			
 			ModelAssetLibrary.library.addModelBase(newModelBase);
 			*/
-			//parts.push( "TEST" );
-			parts.push( assetsIDs[0] );
+			parts.push( newID );
+			//parts.push( assetsIDs[0] );
+			
+			trace("Original model\n")
+			Serialize.serializeObjectContainer(modelBase.container, new TraceSerializer());
+			
+			trace("\n\n\n");
+			
+			trace("New model\n")
+			Serialize.serializeObjectContainer(newModel.container, new TraceSerializer());
+			
 
 			
 			_actor = new IsoActor3D(3, 2, parts, path);
@@ -244,6 +325,19 @@ package com.custardsquare
 			
 			
 			
+		}
+		
+		private function srcDir():String 
+		{
+			var strRet:String = DefaultDirectories.assets.replace("export", "avatar");
+			
+			strRet = strRet.substring(strRet.indexOf("avatar"));
+			while (strRet.indexOf("\\") > 0)
+			{
+				strRet = strRet.replace("\\", "/");
+			}
+			
+			return strRet;
 		}
 		
 		private function fileWritten(e:Event):void 

@@ -1,8 +1,8 @@
 :user_configuration
 
 :: Path to Flex SDK
-set FLEX_SDK=C:\Program Files (x86)\FlashDevelop\Tools\flexsdk
-::set FLEX_SDK=C:\Program Files (x86)\FlashDevelop\Tools\flex_sdk_4.6
+::set FLEX_SDK=C:\Program Files (x86)\FlashDevelop\Tools\flexsdk
+set FLEX_SDK=C:\Program Files (x86)\FlashDevelop\Tools\flex_sdk_4.6
 
 
 :validation

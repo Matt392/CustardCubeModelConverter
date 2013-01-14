@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.64.9 r52542</authoring_tool>
+    </contributor>
+    <created>2013-01-11T14:01:53</created>
+    <modified>2013-01-11T14:01:53</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_effects>
+    <effect id="m_sword_002-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.02136051 0 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="m_sword_002-material" name="m_sword_002-material">
+      <instance_effect url="#m_sword_002-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Cube_113-mesh" name="Cube.113">
+      <mesh>
+        <source id="Cube_113-mesh-positions">
+          <float_array id="Cube_113-mesh-positions-array" count="96">1.231919 -87.37384 -1.211804 1.231933 7.709245 -1.21179 1.211791 7.709245 1.231932 1.211777 -87.37384 1.231919 -1.211804 -87.37384 -1.231945 -1.21179 7.709245 -1.231932 -1.231931 7.709245 1.211791 -1.231945 -87.37384 1.211778 -1.211793 -11.04767 -1.231934 1.23193 -11.04767 -1.211793 -1.231934 -11.04767 1.211788 1.211789 -11.04767 1.23193 -1.174146 -11.04767 -5.799607 1.269576 -11.04767 -5.779466 -1.269581 -11.04767 5.77946 1.174142 -11.04767 5.799602 1.211788 -13.45239 1.231929 -1.211793 -13.45239 -1.231935 -1.231934 -13.45239 1.211788 1.231929 -13.45239 -1.211793 -1.195337 -38.09288 -3.228967 -1.195341 -62.73335 -3.228971 1.195325 -38.09288 3.228955 1.195321 -62.73335 3.228952 1.248386 -38.09288 -3.208826 1.248382 -62.73335 -3.208829 -1.248397 -38.09288 3.208814 -1.248401 -62.73335 3.208811 1.269576 -13.45239 -5.779466 -1.269581 -13.45239 5.77946 -1.174146 -13.45239 -5.799607 1.174141 -13.45239 5.799602</float_array>
+          <technique_common>
+            <accessor source="#Cube_113-mesh-positions-array" count="32" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cube_113-mesh-normals">
+          <float_array id="Cube_113-mesh-normals-array" count="90">0.008241713 1.32267e-7 -0.999966 0 1 0 -0.008214831 -0.08078467 0.9966977 0 -1 0 0.999966 -1.50472e-7 0.008241713 -0.999966 1.50472e-7 -0.008241713 0 1 2.08774e-7 -0.008241772 -1.35437e-7 0.999966 0.999966 -1.49286e-7 0.008241653 -0.999966 1.25831e-7 -0.008241713 -0.999966 0 -0.008241713 0.008214771 0.08078461 -0.9966978 0.9999661 -1.36584e-7 0.008241713 0 -1 -2.08774e-7 0.999966 -1.24127e-7 0.008241653 -0.9999661 1.4135e-7 -0.008241713 0.008241772 0 -0.999966 0.9999661 -1.24805e-7 0.008241772 -0.9999661 0 -0.008241772 0 -1 -2.08774e-7 0 1 2.08774e-7 -0.008241653 0 0.999966 -0.008214771 0.08078438 0.9966977 -0.008241713 -1.39041e-7 0.999966 0.008214831 -0.08078438 -0.9966977 0.008241713 1.3898e-7 -0.9999661 0.999966 -1.48772e-7 0.008241713 0.9999661 -1.6072e-7 0.008241713 -0.999966 1.53606e-7 -0.008241713 -0.999966 1.53581e-7 -0.008241713</float_array>
+          <technique_common>
+            <accessor source="#Cube_113-mesh-normals-array" count="30" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Cube_113-mesh-vertices">
+          <input semantic="POSITION" source="#Cube_113-mesh-positions"/>
+        </vertices>
+        <polylist material="m_sword_002-material" count="30">
+          <input semantic="VERTEX" source="#Cube_113-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Cube_113-mesh-normals" offset="1"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>8 0 5 0 1 0 9 0 5 1 6 1 2 1 1 1 27 2 7 2 3 2 23 2 0 3 3 3 7 3 4 3 9 4 1 4 2 4 11 4 10 5 6 5 5 5 8 5 11 6 10 6 14 6 15 6 6 7 10 7 11 7 2 7 19 8 9 8 11 8 16 8 18 9 10 9 8 9 17 9 17 10 8 10 12 10 30 10 20 11 17 11 19 11 24 11 24 12 19 12 16 12 22 12 18 13 16 13 31 13 29 13 9 14 19 14 28 14 13 14 26 15 18 15 17 15 20 15 30 16 12 16 13 16 28 16 16 17 11 17 15 17 31 17 10 18 18 18 29 18 14 18 19 19 17 19 30 19 28 19 8 20 9 20 13 20 12 20 14 21 29 21 31 21 15 21 18 22 26 22 22 22 16 22 26 23 27 23 23 23 22 23 25 24 0 24 4 24 21 24 21 25 20 25 24 25 25 25 0 26 25 26 23 26 3 26 25 27 24 27 22 27 23 27 7 28 27 28 21 28 4 28 27 29 26 29 20 29 21 29</p>
+        </polylist>
+      </mesh>
+      <extra><technique profile="MAYA"><double_sided>1</double_sided></technique></extra>
+    </geometry>
+  </library_geometries>
+  <library_animations>
+    <animation id="a_baked_001_dummy_pose_matrix">
+      <source id="a_baked_001_dummy_pose_matrix-input">
+        <float_array id="a_baked_001_dummy_pose_matrix-input-array" count="48">0 0.04166662 0.08333331 0.125 0.1666666 0.2083333 0.25 0.2916666 0.3333333 0.375 0.4166666 0.4583333 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1 1.041667 1.083333 1.125 1.166667 1.208333 1.25 1.291667 1.333333 1.375 1.416667 1.458333 1.5 1.541667 1.583333 1.625 1.666667 1.708333 1.75 1.791667 1.833333 1.875 1.916667 1.958333</float_array>
+        <technique_common>
+          <accessor source="#a_baked_001_dummy_pose_matrix-input-array" count="48" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="a_baked_001_dummy_pose_matrix-output">
+        <float_array id="a_baked_001_dummy_pose_matrix-output-array" count="768">1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#a_baked_001_dummy_pose_matrix-output-array" count="48" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="a_baked_001_dummy_pose_matrix-interpolation">
+        <Name_array id="a_baked_001_dummy_pose_matrix-interpolation-array" count="48">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#a_baked_001_dummy_pose_matrix-interpolation-array" count="48" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="a_baked_001_dummy_pose_matrix-sampler">
+        <input semantic="INPUT" source="#a_baked_001_dummy_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#a_baked_001_dummy_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#a_baked_001_dummy_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#a_baked_001_dummy_pose_matrix-sampler" target="dummy/transform"/>
+    </animation>
+    <animation id="a_baked_001_DEF-wpnSword_R_pose_matrix">
+      <source id="a_baked_001_DEF-wpnSword_R_pose_matrix-input">
+        <float_array id="a_baked_001_DEF-wpnSword_R_pose_matrix-input-array" count="48">0 0.04166662 0.08333331 0.125 0.1666666 0.2083333 0.25 0.2916666 0.3333333 0.375 0.4166666 0.4583333 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333 0.875 0.9166667 0.9583333 1 1.041667 1.083333 1.125 1.166667 1.208333 1.25 1.291667 1.333333 1.375 1.416667 1.458333 1.5 1.541667 1.583333 1.625 1.666667 1.708333 1.75 1.791667 1.833333 1.875 1.916667 1.958333</float_array>
+        <technique_common>
+          <accessor source="#a_baked_001_DEF-wpnSword_R_pose_matrix-input-array" count="48" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="a_baked_001_DEF-wpnSword_R_pose_matrix-output">
+        <float_array id="a_baked_001_DEF-wpnSword_R_pose_matrix-output-array" count="768">-5.60465e-6 9.40892e-5 3.34533e-5 -9.906212 9.96887e-5 3.31319e-6 7.38296e-6 -27.95307 5.83723e-6 3.37573e-5 -9.39664e-5 66.27964 0 0 0 1 -5.04145e-6 9.4138e-5 3.34056e-5 -10.0459 9.97111e-5 2.74492e-6 7.31277e-6 -27.87927 5.96615e-6 3.36722e-5 -9.39888e-5 65.73603 0 0 0 1 -2.19248e-6 9.42601e-5 3.33697e-5 -10.74038 9.97906e-5 0 6.72017e-6 -27.54246 6.35272e-6 3.34416e-5 -9.40458e-5 64.51229 0 0 0 1 2.2938e-6 9.42691e-5 3.33376e-5 -11.8076 9.97449e-5 -4.49172e-6 5.83832e-6 -26.99737 7e-6 3.31131e-5 -9.41161e-5 63.14537 0 0 0 1 7.95335e-6 9.39717e-5 3.33075e-5 -13.10693 9.93842e-5 -1.01292e-5 4.84629e-6 -26.27058 7.92661e-6 3.27116e-5 -9.4183e-5 62.03522 0 0 0 1 1.43355e-5 9.32298e-5 3.32568e-5 -14.5062 9.8559e-5 -1.65545e-5 3.92331e-6 -25.37968 9.16165e-6 3.22098e-5 -9.42439e-5 61.44459 0 0 0 1 2.0942e-5 9.19656e-5 3.32729e-5 -15.87862 9.72066e-5 -2.33146e-5 3.25924e-6 -24.40812 1.0753e-5 3.16556e-5 -9.42635e-5 61.3054 0 0 0 1 2.76123e-5 9.01087e-5 3.34859e-5 -17.18408 9.52782e-5 -3.028e-5 2.91584e-6 -23.40889 1.27648e-5 3.10945e-5 -9.41993e-5 61.43265 0 0 0 1 3.43246e-5 8.76061e-5 3.39163e-5 -18.41102 9.26991e-5 -3.74409e-5 2.8951e-6 -22.36002 1.52323e-5 3.04413e-5 -9.40458e-5 61.81779 0 0 0 1 4.10059e-5 8.4428e-5 3.45507e-5 -19.53731 8.94001e-5 -4.47294e-5 3.19762e-6 -21.23867 1.8151e-5 2.95722e-5 -9.38048e-5 62.43875 0 0 0 1 4.75562e-5 8.05807e-5 3.53338e-5 -20.53766 8.53334e-5 -5.20293e-5 3.80442e-6 -20.02165 2.1446e-5 2.83376e-5 -9.34899e-5 63.25905 0 0 0 1 5.38755e-5 7.61071e-5 3.61725e-5 -21.39056 8.04862e-5 -5.91909e-5 4.66111e-6 -18.68719 2.49541e-5 2.65983e-5 -9.31297e-5 64.22828 0 0 0 1 5.98846e-5 7.10742e-5 3.69543e-5 -22.08262 7.48914e-5 -6.60488e-5 5.66982e-6 -17.21825 2.84329e-5 2.42762e-5 -9.27661e-5 65.28462 0 0 0 1 6.55312e-5 6.55513e-5 3.75767e-5 -22.60885 6.863e-5 -7.24461e-5 6.6936e-6 -15.60597 3.16054e-5 2.1399e-5 -9.24473e-5 66.35903 0 0 0 1 7.07836e-5 5.959e-5 3.79741e-5 -22.96965 6.18198e-5 -7.82579e-5 7.57255e-6 -13.85054 3.42245e-5 1.81124e-5 -9.22168e-5 67.37937 0 0 0 1 7.56162e-5 5.32137e-5 3.81289e-5 -23.16657 5.45899e-5 -8.34081e-5 8.14533e-6 -11.95841 3.6131e-5 1.46529e-5 -9.2104e-5 68.27364 0 0 0 1 7.99994e-5 4.64145e-5 3.80671e-5 -23.19919 4.70486e-5 -8.78716e-5 8.26564e-6 -9.936819 3.72805e-5 1.12957e-5 -9.21189e-5 68.9732 0 0 0 1 8.38962e-5 3.9151e-5 3.78411e-5 -23.06308 3.92517e-5 -9.16604e-5 7.80975e-6 -7.788083 3.77366e-5 8.29978e-6 -9.22517e-5 69.41586 0 0 0 1 8.73413e-5 3.18718e-5 3.68646e-5 -22.95798 3.1757e-5 -9.46139e-5 6.55963e-6 -5.309805 3.69635e-5 5.97681e-6 -9.27431e-5 69.50754 0 0 0 1 9.0402e-5 2.51449e-5 3.46199e-5 -23.09436 2.5255e-5 -9.66811e-5 4.27304e-6 -2.406694 3.45396e-5 4.87954e-6 -9.37364e-5 69.1837 0 0 0 1 9.29481e-5 1.9232e-5 3.15292e-5 -23.40081 1.98862e-5 -9.80128e-5 1.16091e-6 0.6463275 3.11208e-5 5.19004e-6 -9.49098e-5 68.4386 0 0 0 1 9.4784e-5 1.45981e-5 2.83938e-5 -23.72764 1.58116e-5 -9.87382e-5 -2.01796e-6 3.404975 2.77364e-5 6.40115e-6 -9.58803e-5 67.31398 0 0 0 1 9.58466e-5 1.17178e-5 2.60659e-5 -23.95176 1.32875e-5 -9.9035e-5 -4.33836e-6 5.342991 2.53018e-5 7.6204e-6 -9.64628e-5 65.98463 0 0 0 1 9.62154e-5 1.0909e-5 2.50383e-5 -24.04491 1.25931e-5 -9.90831e-5 -5.22209e-6 6.015001 2.42351e-5 8.17621e-6 -9.66909e-5 64.81827 0 0 0 1 9.62245e-5 1.14577e-5 2.47566e-5 -24.1096 1.31445e-5 -9.90091e-5 -5.26751e-6 5.882688 2.39038e-5 8.32139e-6 -9.67609e-5 63.85994 0 0 0 1 9.61432e-5 1.25798e-5 2.45267e-5 -24.24078 1.42722e-5 -9.88541e-5 -5.24372e-6 5.592184 2.35821e-5 8.54057e-6 -9.68208e-5 62.90428 0 0 0 1 9.59273e-5 1.45246e-5 2.42963e-5 -24.46209 1.62243e-5 -9.8558e-5 -5.13829e-6 5.071899 2.31958e-5 8.86946e-6 -9.68845e-5 62.07095 0 0 0 1 9.54181e-5 1.79257e-5 2.40285e-5 -24.81641 1.96148e-5 -9.79561e-5 -4.8138e-6 4.154947 2.26707e-5 9.30483e-6 -9.69679e-5 61.45297 0 0 0 1 9.40781e-5 2.42505e-5 2.37603e-5 -25.36541 2.58549e-5 -9.65407e-5 -3.83904e-6 2.43791 2.20037e-5 9.75328e-6 -9.70774e-5 61.11764 0 0 0 1 9.20518e-5 3.1377e-5 2.3351e-5 -25.86686 3.28729e-5 -9.4421e-5 -2.7136e-6 0.3908886 2.11932e-5 1.01724e-5 -9.72146e-5 61.11141 0 0 0 1 9.04117e-5 3.63738e-5 2.24941e-5 -26.18189 3.78302e-5 -9.25553e-5 -2.38761e-6 -1.649717 1.99477e-5 1.06665e-5 -9.7425e-5 61.64815 0 0 0 1 8.84523e-5 4.16328e-5 2.11239e-5 -26.44946 4.3032e-5 -9.02567e-5 -2.30262e-6 -4.565115 1.8104e-5 1.11249e-5 -9.77333e-5 62.85277 0 0 0 1 8.63434e-5 4.66212e-5 1.93545e-5 -26.64493 4.79221e-5 -8.77554e-5 -2.40243e-6 -7.848322 1.5862e-5 1.13476e-5 -9.80966e-5 64.58771 0 0 0 1 8.44735e-5 5.06181e-5 1.74743e-5 -26.77975 5.17813e-5 -8.55304e-5 -2.56214e-6 -10.84261 1.36467e-5 1.12109e-5 -9.84449e-5 66.61546 0 0 0 1 8.23755e-5 5.44441e-5 1.59198e-5 -26.85502 5.54655e-5 -8.31905e-5 -2.4976e-6 -13.36286 1.1882e-5 1.08856e-5 -9.87099e-5 68.60565 0 0 0 1 7.85626e-5 6.00454e-5 1.50264e-5 -26.75981 6.09605e-5 -7.9267e-5 -1.96955e-6 -15.69762 1.07266e-5 1.07057e-5 -9.88617e-5 70.18073 0 0 0 1 7.41171e-5 6.55575e-5 1.45665e-5 -26.50487 6.63831e-5 -7.4802e-5 -1.11856e-6 -17.56958 1.01611e-5 1.0497e-5 -9.89438e-5 71.5019 0 0 0 1 7.04556e-5 6.95217e-5 1.43549e-5 -26.23681 7.02483e-5 -7.11933e-5 0 -18.91738 1.02225e-5 1.00779e-5 -9.89811e-5 72.80928 0 0 0 1 6.60466e-5 7.37006e-5 1.44698e-5 -25.81035 7.43227e-5 -6.69105e-5 1.56049e-6 -20.32781 1.08301e-5 9.72208e-6 -9.8952e-5 73.89252 0 0 0 1 6.03061e-5 7.83903e-5 1.48811e-5 -25.12773 7.88972e-5 -6.13679e-5 3.53913e-6 -21.9137 1.19046e-5 9.60484e-6 -9.884e-5 74.61098 0 0 0 1 5.38536e-5 8.28371e-5 1.55282e-5 -24.25092 8.32104e-5 -5.51863e-5 5.8146e-6 -23.37473 1.33839e-5 9.78811e-6 -9.86326e-5 74.86997 0 0 0 1 4.7199e-5 8.66606e-5 1.62946e-5 -23.25706 8.68708e-5 -4.88699e-5 8.2771e-6 -24.51462 1.51336e-5 1.02468e-5 -9.83325e-5 74.62772 0 0 0 1 3.57543e-5 9.13448e-5 1.95213e-5 -21.02795 9.27181e-5 -3.72414e-5 4.44338e-6 -26.80922 1.13269e-5 1.65083e-5 -9.79923e-5 74.32514 0 0 0 1 2.51471e-5 9.40583e-5 2.28905e-5 -18.59453 9.60189e-5 -2.72411e-5 6.45008e-6 -27.65601 1.23004e-5 2.03539e-5 -9.7148e-5 72.42578 0 0 0 1 1.36064e-5 9.54537e-5 2.65854e-5 -15.60117 9.83759e-5 -1.62222e-5 7.89601e-6 -28.22733 1.18478e-5 2.50751e-5 -9.60947e-5 70.27856 0 0 0 1 3.77323e-6 9.54891e-5 2.95112e-5 -12.82079 9.93986e-5 -6.67023e-6 8.87393e-6 -28.26339 1.04404e-5 2.89941e-5 -9.51507e-5 68.26529 0 0 0 1 -2.21677e-6 9.50693e-5 3.09876e-5 -11.0405 9.95446e-5 -8.30451e-7 9.66895e-6 -27.83117 9.44798e-6 3.10557e-5 -9.46023e-5 66.55747 0 0 0 1 -3.73709e-6 9.50536e-5 3.08897e-5 -10.60433 9.94529e-5 4.67463e-7 1.05935e-5 -27.38518 9.92347e-6 3.11114e-5 -9.45353e-5 65.58979 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#a_baked_001_DEF-wpnSword_R_pose_matrix-output-array" count="48" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="a_baked_001_DEF-wpnSword_R_pose_matrix-interpolation">
+        <Name_array id="a_baked_001_DEF-wpnSword_R_pose_matrix-interpolation-array" count="48">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#a_baked_001_DEF-wpnSword_R_pose_matrix-interpolation-array" count="48" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="a_baked_001_DEF-wpnSword_R_pose_matrix-sampler">
+        <input semantic="INPUT" source="#a_baked_001_DEF-wpnSword_R_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#a_baked_001_DEF-wpnSword_R_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#a_baked_001_DEF-wpnSword_R_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#a_baked_001_DEF-wpnSword_R_pose_matrix-sampler" target="DEF-wpnSword_R/transform"/>
+    </animation>
+  </library_animations>
+  <library_controllers>
+    <controller id="a_baked_001_sword_004-skin" name="a_baked.001">
+      <skin source="#Cube_113-mesh">
+        <bind_shape_matrix>0.08603755 -0.9947922 0.05464026 -6.356096 -0.7134346 -0.09979939 -0.6935781 3.339523 0.6954193 0.02069151 -0.7183061 3.592782 0 0 0 1</bind_shape_matrix>
+        <source id="a_baked_001_sword_004-skin-joints">
+          <Name_array id="a_baked_001_sword_004-skin-joints-array" count="3">root dummy DEF-wpnSword_R</Name_array>
+          <technique_common>
+            <accessor source="#a_baked_001_sword_004-skin-joints-array" count="3" stride="1">
+              <param name="JOINT" type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="a_baked_001_sword_004-skin-bind_poses">
+          <float_array id="a_baked_001_sword_004-skin-bind_poses-array" count="48">1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 1 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1 0 1.78814e-7 39.34952 0 -0.9993318 0.0365523 -3.637865 1.39749e-7 -0.0365523 -0.9993318 75.02739 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#a_baked_001_sword_004-skin-bind_poses-array" count="3" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="a_baked_001_sword_004-skin-weights">
+          <float_array id="a_baked_001_sword_004-skin-weights-array" count="32">1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</float_array>
+          <technique_common>
+            <accessor source="#a_baked_001_sword_004-skin-weights-array" count="32" stride="1">
+              <param name="WEIGHT" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <joints>
+          <input semantic="JOINT" source="#a_baked_001_sword_004-skin-joints"/>
+          <input semantic="INV_BIND_MATRIX" source="#a_baked_001_sword_004-skin-bind_poses"/>
+        </joints>
+        <vertex_weights count="32">
+          <input semantic="JOINT" source="#a_baked_001_sword_004-skin-joints" offset="0"/>
+          <input semantic="WEIGHT" source="#a_baked_001_sword_004-skin-weights" offset="1"/>
+          <vcount>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 </vcount>
+          <v>2 0 2 1 2 2 2 3 2 4 2 5 2 6 2 7 2 8 2 9 2 10 2 11 2 12 2 13 2 14 2 15 2 16 2 17 2 18 2 19 2 20 2 21 2 22 2 23 2 24 2 25 2 26 2 27 2 28 2 29 2 30 2 31</v>
+        </vertex_weights>
+      </skin>
+    </controller>
+  </library_controllers>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="a_baked_001" name="a_baked_001" type="NODE">
+        <translate sid="location">0 0 0</translate>
+        <rotate sid="rotationZ">0 0 1 0</rotate>
+        <rotate sid="rotationY">0 1 0 0</rotate>
+        <rotate sid="rotationX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <node id="root" name="root" sid="root" type="JOINT">
+          <matrix sid="transform">1 0 0 0 0 7.54979e-8 -1 0 0 1 7.54979e-8 0 0 0 0 1</matrix>
+          <node id="dummy" name="dummy" sid="dummy" type="JOINT">
+            <matrix sid="transform">1 0 0 0 0 7.54979e-8 1 0 0 -1 7.54979e-8 -7.54979e-8 0 0 0 1</matrix>
+            <node id="DEF-wpnSword_R" name="DEF-wpnSword.R" sid="DEF-wpnSword_R" type="JOINT">
+              <matrix sid="transform">-3.73709e-6 9.50536e-5 3.08897e-5 -10.60433 9.94529e-5 4.67463e-7 1.05935e-5 -27.38518 9.92347e-6 3.11114e-5 -9.45353e-5 65.58978 0 0 0 1</matrix>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node id="sword_004" name="sword_004" type="NODE">
+        <translate sid="location">0 0 0</translate>
+        <rotate sid="rotationZ">0 0 1 0</rotate>
+        <rotate sid="rotationY">0 1 0 0</rotate>
+        <rotate sid="rotationX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_controller url="#a_baked_001_sword_004-skin">
+          <skeleton>#root</skeleton>
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="m_sword_002-material" target="#m_sword_002-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_controller>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
