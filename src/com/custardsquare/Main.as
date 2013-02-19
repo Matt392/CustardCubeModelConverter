@@ -16,8 +16,8 @@ package com.custardsquare
 	import com.custardsquare.custardcube.render3D.Custard3DStage;
 	import com.custardsquare.custardcube.render3D.ModelAsset;
 	import com.custardsquare.custardcube.render3D.ModelAssetLibrary;
-	import com.custardsquare.utils.asset.AssetID;
-	import com.custardsquare.utils.asset.AssetLoader;
+	import com.custardsquare.custardcube.utils.asset.AssetLoader;
+	import com.custardsquare.custardcube.utils.asset.AsyncManager;
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
@@ -135,7 +135,7 @@ package com.custardsquare
 			
 			ModelAssetLibrary.library.localDir = true;
 			
-			_assetsLoader = new AssetLoader();
+			_assetsLoader = new AssetLoader(AsyncManager.PRIORETY_HIGHEST, "");
 			//_assetsLoader.queueXML(new AssetID("Model", "Model.xml"));
 			//_assetsLoader.dispatcher.addEventListener(AssetLoader.ASSETS_LOADED, onAssetsLoaded);
 			//_assetsLoader.load();
@@ -204,6 +204,10 @@ package com.custardsquare
 				else if (outFileName.indexOf("male") > 0)
 				{
 					outXmlFileName += "/male/";	
+				}
+				else if (outFileName.indexOf("npc") > 0)
+				{
+					outXmlFileName += "/npc/";	
 				}
 				outXmlFileName += assetsIDs[0] + ".xml";
 				
@@ -300,7 +304,7 @@ package com.custardsquare
 			
 
 			
-			_actor = new IsoActor3D(3, 2, parts, path);
+			_actor = new IsoActor3D(3, parts, path);
 			
 			_model = _actor.compositeModel;
 			_modelLight = _actor.compositeModelLighting;
@@ -366,7 +370,7 @@ package com.custardsquare
 			//AnimationController.instance.initialize(this.starling.stage);
 			//ApplicationFacade.getInstance().startup(this);
 			
-			CSLogger.log.initialize(this);
+			CSLogger.log.manualInit(this);
 			
 		}
 		
@@ -542,7 +546,7 @@ package com.custardsquare
 			
 		 
 			// Clear the Context3D object
-			stage3DProxy.clear();
+			stage3DProxy.clearExt(0x8888ff);
 
 			// Render the Starling animation layer
 			//starlingCheckerboard.nextFrame();

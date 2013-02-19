@@ -2,7 +2,7 @@
 <application xmlns="http://ns.adobe.com/air/application/3.1">
 	
 	<id>com.custardsquare.CustardCubeModelConverter</id> 
-	<versionNumber>1.0</versionNumber> 
+	<versionNumber>1.1</versionNumber> 
 	<filename>CustardCubeModelConverter</filename> 
 	
 	<name>CustardCubeModelConverter</name> 
